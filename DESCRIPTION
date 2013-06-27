@@ -3,8 +3,8 @@ Type: Package
 Title: An R package to interact with the Project Vote Smart API for
         scientific research
 Depends: R (>= 2.14.2), XML, nnet
-Version: 0.1
-Date: 2013-05-27
+Version: 0.1.1
+Date: 2013-06-27
 Author: Ulrich Matter
 Maintainer: Ulrich Matter <ulrich.matter@unibas.ch>
 Description: The pvsR package facilitates data retrieval from Project
@@ -29,6 +29,6 @@ Note: In order to use this package you need your personal Project Vote
         warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
         PURPOSE. See the GNU General Public License for more details.
 NeedsCompilation: no
-Packaged: 2013-05-29 00:13:14 UTC; ueli
+Packaged: 2013-06-27 07:34:18 UTC; ueli
 Repository: CRAN
-Date/Publication: 2013-05-29 07:44:16
+Date/Publication: 2013-06-27 09:46:46
