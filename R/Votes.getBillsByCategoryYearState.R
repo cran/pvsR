@@ -5,7 +5,7 @@
 ##' @param year a character string or list of character strings with the year ID(s)
 ##' @param stateId a character string or list of character strings with the state ID(s) (see references for details)
 ##' @param categoryId a character string or list of character strings with the category ID(s) (see references for details)
-##' @return A data frame with a row for each bill and columns with variables describing the bill. The returned data frame contains a row for each bill and columns with the following variables describing the bill:\cr bills.bill*.billId,\cr bills.bill*.billNumber,\cr bills.bill*.title,\cr bills.bill*.type.
+##' @return A data frame with a row for each bill and columns with the following variables describing the bill:\cr bills.bill*.billId,\cr bills.bill*.billNumber,\cr bills.bill*.title,\cr bills.bill*.type.
 ##' @references http://api.votesmart.org/docs/Votes.html\cr
 ##' Use State.getStateIDs() to get a list of state IDs.\cr
 ##' Use Votes.getCategories() or Rating.getCandidateRating() to get a list of category IDs.

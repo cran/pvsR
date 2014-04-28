@@ -4,7 +4,7 @@
 ##' @usage District.getByZip(zip5, zip4=NULL)
 ##' @param zip5 a character string or list of character strings with the five-digit ZIP code
 ##' @param zip4 (optional) a character string or list of character strings with the expanded ZIP+4 code (default: All)
-##' @return A data frame with a row for each district and columns with variables describing the district. The returned data frame contains a row for each district and columns with the following variables describing the district:\cr districtList.district*.districtId,\cr districtList.district*.name,\cr districtList.district*.officeId,\cr districtList.district*.stateId.
+##' @return A data frame with a row for each district and columns with the following variables describing the district:\cr districtList.district*.districtId,\cr districtList.district*.name,\cr districtList.district*.officeId,\cr districtList.district*.stateId.
 ##' @references http://api.votesmart.org/docs/District.html
 ##' @author Ulrich Matter <ulrich.matter-at-unibas.ch>
 ##' @examples

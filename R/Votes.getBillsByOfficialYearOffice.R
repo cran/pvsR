@@ -5,7 +5,7 @@
 ##' @param year a character string or list of character strings with the year ID(s)
 ##' @param candidateId a character string or list of character strings with the candidate ID(s) (see references for details)
 ##' @param officeId (optional) a character string or list of character strings with the office ID(s) (default: all) (see references for details)
-##' @return A data frame with a row for each bill and columns with variables describing the bill. The returned data frame contains a row for each bill and columns with the following variables describing the bill:\cr bills.bill*.billId,\cr bills.bill*.billNumber,\cr bills.bill*.title,\cr bills.bill*.type.
+##' @return A data frame with a row for each bill and columns with the following variables describing the bill:\cr bills.bill*.billId,\cr bills.bill*.billNumber,\cr bills.bill*.title,\cr bills.bill*.type.
 ##' @references http://api.votesmart.org/docs/Votes.html\cr
 ##' Use Candidates.getByOfficeState(), Candidates.getByOfficeTypeState(), Candidates.getByLastname(), Candidates.getByLevenshtein(), Candidates.getByElection(), Candidates.getByDistrict() or Candidates.getByZip() to get a list of candidate IDs.\cr
 ##' See http://api.votesmart.org/docs/semi-static.html for a list of office IDs or use Office.getOfficesByType(), Office.getOfficesByLevel(), Office.getOfficesByTypeLevel() or Office.getOfficesByBranchLevel

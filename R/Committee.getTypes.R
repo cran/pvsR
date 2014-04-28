@@ -2,7 +2,7 @@
 ##' 
 ##' This function is a wrapper for the Committee.getTypes() method of the PVS API Committee class which returns the existing committee types.
 ##' @usage Committee.getTypes()
-##' @return A data frame with a row for each committee type and columns with variables describing the committee type. The returned data frame contains a row for each committee type and columns with the following variables describing the committee type:\cr committeeTypes.type*.committeeTypeId,\cr committeeTypes.type*.name.
+##' @return A data frame with a row for each committee type and columns with the following variables describing the committee type:\cr committeeTypes.type*.committeeTypeId,\cr committeeTypes.type*.name.
 ##' @references http://api.votesmart.org/docs/Committee.html
 ##' @author Ulrich Matter <ulrich.matter-at-unibas.ch>
 ##' @examples

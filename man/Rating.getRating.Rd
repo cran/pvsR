@@ -2,7 +2,7 @@
 \alias{Rating.getRating}
 \title{Get all candidate ratings from an evaluation by a special interest group}
 \usage{
-  Rating.getRating(ratingId)
+Rating.getRating(ratingId)
 }
 \arguments{
   \item{ratingId}{a character string or list of character
@@ -10,20 +10,18 @@
   details)}
 }
 \value{
-  A data frame with a row for each candidate and columns
-  with variables describing the candidate. The returned
-  data frame contains a row for each candidate and columns
-  with the following variables describing the candidate:\cr
-  candidateRating*.candidateId,\cr candidateRating*.rating.
+A data frame with a row for each candidate and columns with
+the following variables describing the candidate:\cr
+candidateRating*.candidateId,\cr candidateRating*.rating.
 }
 \description{
-  This function is a wrapper for the Rating.getRating()
-  method of the PVS API Rating class which dumps all
-  candidate ratings from a scorecard by a special interest
-  group (SIG). The function sends a request with this
-  method to the PVS API for all rating IDs given as a
-  function input, extracts the XML values from the returned
-  XML file(s) and returns them arranged in one data frame.
+This function is a wrapper for the Rating.getRating()
+method of the PVS API Rating class which dumps all
+candidate ratings from a scorecard by a special interest
+group (SIG). The function sends a request with this method
+to the PVS API for all rating IDs given as a function
+input, extracts the XML values from the returned XML
+file(s) and returns them arranged in one data frame.
 }
 \examples{
 # First, make sure your personal PVS API key is saved as character string in the pvs.key variable:
@@ -33,11 +31,11 @@
 \dontrun{scorecard}
 }
 \author{
-  Ulrich Matter <ulrich.matter-at-unibas.ch>
+Ulrich Matter <ulrich.matter-at-unibas.ch>
 }
 \references{
-  http://api.votesmart.org/docs/Rating.html\cr Use
-  Rating.getSigRatings() or Rating.getCandidateRating() to
-  get a list of rating IDs.
+http://api.votesmart.org/docs/Rating.html\cr Use
+Rating.getSigRatings() or Rating.getCandidateRating() to
+get a list of rating IDs.
 }
 

@@ -3,7 +3,7 @@
 ##' This function is a wrapper for the Measure.getMeasure() method of the PVS API Measure class which grabs details of a ballot measure. The function sends a request with this method to the PVS API for all measure IDs given as a function input, extracts the XML values from the returned XML file(s) and returns them arranged in one data frame.
 ##' @usage Measure.getMeasure(measureId)
 ##' @param measureId a character string or list of character strings with the measure ID(s) (see references for details)
-##' @return A data frame with a row for each ballot measure and columns with variables describing the ballot measure. The returned data frame contains a row for each ballot measure and columns with the following variables describing the ballot measure:\cr measure.measureId,\cr measure.measureCode,\cr measure.title,\cr measure.electionDate,\cr measure.electionType,\cr measure.source,\cr measure.url,\cr measure.summary,\cr measure.summaryUrl,\cr measure.measureText,\cr measure.textUrl,\cr measure.proUrl,\cr measure.conUrl,\cr measure.yes,\cr measure.no,\cr measure.outcome.
+##' @return A data frame with a row for each ballot measure and columns with the following variables describing the ballot measure:\cr measure.measureId,\cr measure.measureCode,\cr measure.title,\cr measure.electionDate,\cr measure.electionType,\cr measure.source,\cr measure.url,\cr measure.summary,\cr measure.summaryUrl,\cr measure.measureText,\cr measure.textUrl,\cr measure.proUrl,\cr measure.conUrl,\cr measure.yes,\cr measure.no,\cr measure.outcome.
 ##' @references http://api.votesmart.org/docs/Measure.html\cr
 ##' Use Measure.getMeasuresByYearState() to get a list of measure IDs.
 ##' @author Ulrich Matter <ulrich.matter-at-unibas.ch>

@@ -2,7 +2,7 @@
 ##' 
 ##' This function is a wrapper for the Office.getBranches() method of the PVS API Office class which grabs a list of branches of government and their IDs.
 ##' @usage Office.getBranches()
-##' @return A data frame with a row for each branch and columns with variables describing the branch. The returned data frame contains a row for each branch and columns with the following variables describing the branch:\cr branches.branch*.officeBranchId,\cr branches.branch*.name.
+##' @return A data frame with a row for each branch and columns with the following variables describing the branch:\cr branches.branch*.officeBranchId,\cr branches.branch*.name.
 ##' @references http://api.votesmart.org/docs/Office.html
 ##' @author Ulrich Matter <ulrich.matter-at-unibas.ch>
 ##' @examples

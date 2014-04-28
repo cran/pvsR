@@ -4,7 +4,7 @@
 ##' @usage Officials.getByZip(zip5, zip4=NULL)
 ##' @param zip5 a character string or list of character strings with the five-digit ZIP code
 ##' @param zip4 (optional) a character string or list of character strings with the expanded ZIP+4 code (default: all)
-##' @return A data frame with a row for each official and columns with variables describing the official. The returned data frame contains a row for each official and columns with the following variables describing the official:\cr candidateList.zipMessage,\cr candidateList.candidate*.candidateId,\cr candidateList.candidate*.firstName,\cr candidateList.candidate*.nickName,\cr candidateList.candidate*.middleName,\cr candidateList.candidate*.lastName,\cr candidateList.candidate*.suffix,\cr candidateList.candidate*.title,\cr candidateList.candidate*.electionParties,\cr candidateList.candidate*.electionstatus,\cr candidateList.candidate*.officeParties,\cr candidatelist.candidate*.officeStatus,\cr candidateList.candidate*.officeDistrictId,\cr candidateList.candidate*.officeDistrictName,\cr candidateList.candidate*.officeTypeId,\cr candidateList.candidate*.officeId,\cr candidateList.candidate*.officeName,\cr candidateList.candidate*.officeStateId.
+##' @return A data frame with a row for each official and columns with the following variables describing the official:\cr candidateList.zipMessage,\cr candidateList.candidate*.candidateId,\cr candidateList.candidate*.firstName,\cr candidateList.candidate*.nickName,\cr candidateList.candidate*.middleName,\cr candidateList.candidate*.lastName,\cr candidateList.candidate*.suffix,\cr candidateList.candidate*.title,\cr candidateList.candidate*.electionParties,\cr candidateList.candidate*.electionstatus,\cr candidateList.candidate*.officeParties,\cr candidatelist.candidate*.officeStatus,\cr candidateList.candidate*.officeDistrictId,\cr candidateList.candidate*.officeDistrictName,\cr candidateList.candidate*.officeTypeId,\cr candidateList.candidate*.officeId,\cr candidateList.candidate*.officeName,\cr candidateList.candidate*.officeStateId.
 ##' @references http://api.votesmart.org/docs/Officials.html
 ##' @author Ulrich Matter <ulrich.matter-at-unibas.ch>
 ##' @examples
@@ -12,7 +12,7 @@
 ##' \dontrun{pvs.key <- "yourkey"}
 ##' # get a list of officials by ZIP code
 ##' \dontrun{officials <- Officials.getByZip(list(10001,10002))}
-##' \dontrun{officials}
+##' \dontrun{head(officials)}
 
 ##' @export
 

@@ -2,8 +2,7 @@
 \alias{Committee.getCommitteesByTypeState}
 \title{Get a list of committees according to type and state}
 \usage{
-  Committee.getCommitteesByTypeState(typeId=list("H","S","J"),
-    stateId="NA", all=FALSE)
+Committee.getCommitteesByTypeState(typeId=list("H","S","J"), stateId="NA", all=FALSE)
 }
 \arguments{
   \item{typeId}{(optional) a character string or list of
@@ -11,8 +10,8 @@
   references for details)}
 
   \item{stateId}{(optional) a character string or list of
-  character strings with the state ID(s) (default: NA) (see
-  references for details)}
+  character strings with the state ID(s) (default: "NA",
+  for national) (see references for details)}
 
   \item{all}{a logical indicator; if TRUE data on all
   possible combinations of the input variables are
@@ -20,25 +19,23 @@
   of them (see example)}
 }
 \value{
-  A data frame with a row for each committee and columns
-  with variables describing the committee. The returned
-  data frame contains a row for each committee and columns
-  with the following variables describing the committee:\cr
-  committees.committee*.committeeId,\cr
-  committees.committee*.parentId,\cr
-  committees.committee*.stateId,\cr
-  committees.committee*.committeeTypeId,\cr
-  committees.committee*.name.
+A data frame with a row for each committee and columns with
+the following variables describing the committee:\cr
+committees.committee*.committeeId,\cr
+committees.committee*.parentId,\cr
+committees.committee*.stateId,\cr
+committees.committee*.committeeTypeId,\cr
+committees.committee*.name.
 }
 \description{
-  This function is a wrapper for the
-  Committee.getCommitteesByTypeState() method of the PVS
-  API Committee class which returns a list of committees
-  for each type in each requested state. The function sends
-  a request with this method to the PVS API for all type
-  and state IDs given as a function input, extracts the XML
-  values from the returned XML file(s) and returns them
-  arranged in one data frame.
+This function is a wrapper for the
+Committee.getCommitteesByTypeState() method of the PVS API
+Committee class which returns a list of committees for each
+type in each requested state. The function sends a request
+with this method to the PVS API for all type and state IDs
+given as a function input, extracts the XML values from the
+returned XML file(s) and returns them arranged in one data
+frame.
 }
 \examples{
 # First, make sure your personal PVS API key is saved as character string in the pvs.key variable:
@@ -54,12 +51,12 @@ stateId=list("NY","NJ"), all=FALSE)}
 \dontrun{committees}
 }
 \author{
-  Ulrich Matter <ulrich.matter-at-unibas.ch>
+Ulrich Matter <ulrich.matter-at-unibas.ch>
 }
 \references{
-  http://api.votesmart.org/docs/Committee.html|cr See
-  http://api.votesmart.org/docs/semi-static.html for a list
-  of committee-type ID(s).\cr Use State.getStateIDs() to
-  get a list of state IDs.
+http://api.votesmart.org/docs/Committee.html|cr See
+http://api.votesmart.org/docs/semi-static.html for a list
+of committee-type ID(s).\cr Use State.getStateIDs() to get
+a list of state IDs.
 }
 

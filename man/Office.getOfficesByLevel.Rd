@@ -2,7 +2,7 @@
 \alias{Office.getOfficesByLevel}
 \title{Get offices tracked according to level}
 \usage{
-  Office.getOfficesByLevel(levelId)
+Office.getOfficesByLevel(levelId)
 }
 \arguments{
   \item{levelId}{a character string or list of character
@@ -10,39 +10,36 @@
   details)}
 }
 \value{
-  A data frame with a row for each office and columns with
-  variables describing the office. The returned data frame
-  contains a row for each office and columns with the
-  following variables describing the office:\cr
-  offices.office*.officeId,\cr
-  offices.office*.officeTypeId,\cr
-  offices.office*.officeLevelId,\cr
-  offices.office*.officeBranchId,\cr
-  offices.office*.name,\cr offices.office*.title,\cr
-  offices.office*.shortTitle.
+A data frame with a row for each office and columns with
+the following variables describing the office:\cr
+offices.office*.officeId,\cr
+offices.office*.officeTypeId,\cr
+offices.office*.officeLevelId,\cr
+offices.office*.officeBranchId,\cr offices.office*.name,\cr
+offices.office*.title,\cr offices.office*.shortTitle.
 }
 \description{
-  This function is a wrapper for the
-  Office.getOfficesByLevel() method of the PVS API Office
-  class which grabs a list of offices Project Vote Smart
-  keeps track of according to their level. The function
-  sends a request with this method to the PVS API for all
-  level IDs given as a function input, extracts the XML
-  values from the returned XML file(s) and returns them
-  arranged in one data frame.
+This function is a wrapper for the
+Office.getOfficesByLevel() method of the PVS API Office
+class which grabs a list of offices Project Vote Smart
+keeps track of according to their level. The function sends
+a request with this method to the PVS API for all level IDs
+given as a function input, extracts the XML values from the
+returned XML file(s) and returns them arranged in one data
+frame.
 }
 \examples{
 # First, make sure your personal PVS API key is saved as character string in the pvs.key variable:
 \dontrun{pvs.key <- "yourkey"}
 # get offices tracked for all levels
 \dontrun{offices <- Office.getOfficesByLevel(list("F","S","L"))}
-\dontrun{offices}
+\dontrun{head(offices)}
 }
 \author{
-  Ulrich Matter <ulrich.matter-at-unibas.ch>
+Ulrich Matter <ulrich.matter-at-unibas.ch>
 }
 \references{
-  http://api.votesmart.org/docs/Office.html\cr Use
-  Office.getLevels() to get level ID(s).
+http://api.votesmart.org/docs/Office.html\cr Use
+Office.getLevels() to get level ID(s).
 }
 

@@ -2,7 +2,22 @@ pvsRequest10 <-
   function (request,inputs, separate=NULL) {
     pvs.url <- paste("http://api.votesmart.org/",request,"key=",get('pvs.key',envir=.GlobalEnv),inputs,sep="") #generate url for request
     
-    if (names(xmlRoot(xmlTreeParse(pvs.url,useInternalNodes=TRUE)))[1]=="errorMessage") {
+    httpresp <- GET(url=pvs.url)
+    xmltext <- content(x=httpresp, as="text")
+    errors <-  getXMLErrors(xmltext) # check if xml can be parsed properly
+    
+    if (length(errors) != 0) {
+      
+      if (names(errors[[1]]$code) == "XML_ERR_CDATA_NOT_FINISHED") { # if not, try to fix 
+        
+        xmltext <- gsub(pattern="\003", replacement="", x=xmltext, fixed=TRUE)
+        
+      }
+    }
+    
+    output.base <- xmlRoot(xmlTreeParse(xmltext, useInternalNodes=TRUE))
+    
+    if (names(output.base)[1]=="errorMessage") {
       
       # if the requested data is not available, return an empty (NA) data frame and give a warning
       warning(gsub(pattern="&", replacement=" ", x=paste("No data available for: ", inputs,". The corresponding rows in the data frame are filled with NAs.", sep=""), fixed=TRUE), call.=FALSE)
@@ -16,7 +31,7 @@ pvsRequest10 <-
       
       if (length(separate)==0) {  #extract all xml-values as usual (result: one df with one row, many columns )
                   
-      output <- xmlRoot(xmlTreeParse(pvs.url,useInternalNodes=TRUE)) # useInternal=TRUE allows for this simple processing approach, but does not allow splitting up the output! Hence, in the following else{} it is the other way around!
+      output <- output.base # useInternal=TRUE allows for this simple processing approach, but does not allow splitting up the output! Hence, in the following else{} it is the other way around!
       
       nodenames <- names(output) # get names of nodes
       
@@ -75,10 +90,7 @@ pvsRequest10 <-
   # these nodes contain several subnodes of the same type with several values, such as sponsors or candidates, hence they are to be processed normally:
   
   
-  
-  output <- xmlRoot(xmlTreeParse(pvs.url,useInternalNodes=TRUE)) 
-  
-   
+  output <- output.base 
   nodenames <- names(output) # get names of nodes
   
   # remove generally unnecessary child-nodes:
@@ -88,11 +100,7 @@ pvsRequest10 <-
     
     output <- removeChildren(output,kids="generalInfo")
     
-  } else { if (nodenames[1]=="generalinfo") {
-    
-    output <- removeChildren(output,kids="generalinfo")
-  }
-  }
+  } 
   
   nonsepl <- names(output) %in% separate
   nonseparate <- names(output)[!nonsepl]
@@ -119,7 +127,8 @@ pvsRequest10 <-
   # ------- Second, the remaining nodes ---------
   
   
-  output <- xmlRoot(xmlTreeParse(pvs.url,useInternalNodes=TRUE)) 
+  output <- xmlRoot(xmlTreeParse(xmltext, useInternalNodes=TRUE))
+
   
   nodenames <- names(output) # get names of nodes
   
@@ -127,14 +136,9 @@ pvsRequest10 <-
   
   if (nodenames[1]=="generalInfo") {
     
-    
     output <- removeChildren(output,kids="generalInfo")
     
-  } else { if (nodenames[1]=="generalinfo") {
-    
-    output <- removeChildren(output,kids="generalinfo")
-  }
-  }
+  } 
   
   # remove specified nodes for separate processing (here remove the ones in separate, because all but the nodes in separate should be processed )
   

@@ -2,8 +2,7 @@
 \alias{District.getByOfficeState}
 \title{Get district IDs according to the office and state}
 \usage{
-  District.getByOfficeState(officeId, stateId,
-    districtName=NULL, all=FALSE)
+District.getByOfficeState(officeId, stateId, districtName=NULL, all=FALSE)
 }
 \arguments{
   \item{officeId}{a character string or list of character
@@ -24,24 +23,21 @@
   of them (see example)}
 }
 \value{
-  A data frame with a row for each district and columns
-  with variables describing the district. The returned data
-  frame contains a row for each district and columns with
-  the following variables describing the district:\cr
-  districtList.district*.districtId,\cr
-  districtList.district*.name,\cr
-  districtList.district*.officeId,\cr
-  districtList.district*.stateId.
+A data frame with a row for each district and columns with
+the following variables describing the district:\cr
+districtList.district*.districtId,\cr
+districtList.district*.name,\cr
+districtList.district*.officeId,\cr
+districtList.district*.stateId.
 }
 \description{
-  This function is a wrapper for the
-  District.getByOfficeState() method of the PVS API
-  District class which grabs district IDs according to the
-  office and state. The function sends a request with this
-  method to the PVS API for all district names and office
-  IDs given as a function input, extracts the XML values
-  from the returned XML file(s) and returns them arranged
-  in one data frame.
+This function is a wrapper for the
+District.getByOfficeState() method of the PVS API District
+class which grabs district IDs according to the office and
+state. The function sends a request with this method to the
+PVS API for all district names and office IDs given as a
+function input, extracts the XML values from the returned
+XML file(s) and returns them arranged in one data frame.
 }
 \examples{
 # First, make sure your personal PVS API key is saved as character string in the pvs.key variable:
@@ -60,15 +56,14 @@
 \dontrun{districts}
 }
 \author{
-  Ulrich Matter <ulrich.matter-at-unibas.ch>
+Ulrich Matter <ulrich.matter-at-unibas.ch>
 }
 \references{
-  http://api.votesmart.org/docs/District.html\cr See
-  http://api.votesmart.org/docs/semi-static.html for a list
-  of office IDs or use Office.getOfficesByType(),
-  Office.getOfficesByLevel(),
-  Office.getOfficesByTypeLevel() or
-  Office.getOfficesByBranchLevel().\cr Use
-  State.getStateIDs() to get a list of state IDs.
+http://api.votesmart.org/docs/District.html\cr See
+http://api.votesmart.org/docs/semi-static.html for a list
+of office IDs or use Office.getOfficesByType(),
+Office.getOfficesByLevel(), Office.getOfficesByTypeLevel()
+or Office.getOfficesByBranchLevel().\cr Use
+State.getStateIDs() to get a list of state IDs.
 }
 

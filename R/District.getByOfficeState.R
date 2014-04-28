@@ -6,7 +6,7 @@
 ##' @param stateId a character string or list of character strings with the state ID(s) (see references for details)
 ##' @param districtName (optional) a character string or list of character strings with the district name (default: All)
 ##' @param all a logical indicator; if TRUE data on all possible combinations of the input variables are returned, if FALSE (default) only the exact combinations of them (see example)
-##' @return A data frame with a row for each district and columns with variables describing the district. The returned data frame contains a row for each district and columns with the following variables describing the district:\cr districtList.district*.districtId,\cr districtList.district*.name,\cr districtList.district*.officeId,\cr districtList.district*.stateId.
+##' @return A data frame with a row for each district and columns with the following variables describing the district:\cr districtList.district*.districtId,\cr districtList.district*.name,\cr districtList.district*.officeId,\cr districtList.district*.stateId.
 ##' @references http://api.votesmart.org/docs/District.html\cr
 ##' See http://api.votesmart.org/docs/semi-static.html for a list of office IDs or use Office.getOfficesByType(), Office.getOfficesByLevel(), Office.getOfficesByTypeLevel() or Office.getOfficesByBranchLevel().\cr
 ##' Use State.getStateIDs() to get a list of state IDs.

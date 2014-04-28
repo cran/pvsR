@@ -4,7 +4,7 @@
 ##' @usage Rating.getCandidateRating(candidateId, sigId=NULL)
 ##' @param candidateId a character string or list of character strings with the candidateId(s) (see references for details)
 ##' @param sigId (optional) a character string or list of character strings with the special interest group's ID(s) (see references for details)
-##' @return A data frame with a row for each rating of a candidate and columns with variables describing the candidate. The returned data frame contains a row for each candidate and columns with the following variables describing the candidate:\cr candidateRating.candidate.title,\cr candidateRating.candidate.firstName,\cr candidateRating.candidate.middleName,\cr candidateRating.candidate.lastName,\cr candidateRating.candidate.suffix,\cr candidateRating.candidate.office,\cr candidateRating.rating*.sigId,\cr candidateRating.rating*.ratingId,\cr candidateRating.rating*.categories.category*.categoryId,\cr candidateRating.rating*.categories.category*.name,\cr candidateRating.rating*.timeSpan,\cr candidateRating.rating*.rating,\cr candidateRating.rating*.ratingName,\cr candidateRating.rating*.ratingText.
+##' @return A data frame with a row for each rating of a candidate and columns with the following variables describing the candidate:\cr candidateRating.candidate.title,\cr candidateRating.candidate.firstName,\cr candidateRating.candidate.middleName,\cr candidateRating.candidate.lastName,\cr candidateRating.candidate.suffix,\cr candidateRating.candidate.office,\cr candidateRating.rating*.sigId,\cr candidateRating.rating*.ratingId,\cr candidateRating.rating*.categories.category*.categoryId,\cr candidateRating.rating*.categories.category*.name,\cr candidateRating.rating*.timeSpan,\cr candidateRating.rating*.rating,\cr candidateRating.rating*.ratingName,\cr candidateRating.rating*.ratingText.
 ##' @references http://api.votesmart.org/docs/Rating.html\cr
 ##' Use Candidates.getByOfficeState(), Candidates.getByOfficeTypeState(), Candidates.getByLastname(), Candidates.getByLevenshtein(), Candidates.getByElection(), Candidates.getByDistrict() or Candidates.getByZip() to get a list of candidate IDs.\cr
 ##' Use Rating.getSigList() to get a list of special interest group's IDs.
@@ -14,7 +14,7 @@
 ##' \dontrun{pvs.key <- "yourkey"}
 ##' # get ratings by candidate and special interest group
 ##' \dontrun{rating <- Rating.getCandidateRating(candidateId="9490")}
-##' \dontrun{rating}
+##' \dontrun{head(rating)}
 ##' @export
 
 

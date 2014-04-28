@@ -4,7 +4,7 @@
 ##' @usage Votes.getBillActionVoteByOfficial(actionId, candidateId)
 ##' @param actionId a character string or list of character strings with the action ID(s) (see references for details)
 ##' @param candidateId a character string or list of character strings with the candidate ID(s) (see references for details)
-##' @return A data frame with a row for each vote and columns with variables describing the vote. The returned data frame contains a row for each vote and columns with the following variables describing the vote:\cr votes.vote.candidateId,\cr votes.vote.candidateName,\cr votes.vote.officeParties,\cr votes.vote.action.
+##' @return A data frame with a row for each vote and columns with the following variables describing the vote:\cr votes.vote.candidateId,\cr votes.vote.candidateName,\cr votes.vote.officeParties,\cr votes.vote.action.
 ##' @references http://api.votesmart.org/docs/Votes.html\cr
 ##' Use Candidates.getByOfficeState(), Candidates.getByOfficeTypeState(), Candidates.getByLastname(), Candidates.getByLevenshtein(), Candidates.getByElection(), Candidates.getByDistrict() or Candidates.getByZip() to get a list of candidate IDs.\cr
 ##' Use Votes.getBill() or Votes.getByOfficial() to get a list of action IDs.

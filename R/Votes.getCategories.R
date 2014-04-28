@@ -3,8 +3,8 @@
 ##' This function is a wrapper for the Votes.getCategories() method of the PVS API Votes class which dumps categories that contain released bills according to year and state. The function sends a request with this method to the PVS API for all years and state IDs given as a function input, extracts the XML values from the returned XML file(s) and returns them arranged in one data frame.
 ##' @usage Votes.getCategories(year, stateId="NA")
 ##' @param year a character string or list of character strings with the year(s)
-##' @param stateId (optional) a character string or list of character strings with the state ID(s) (default: "NA", for "National") (see references for details)
-##' @return A data frame with a row for each category and columns with variables describing the category. The returned data frame contains a row for each category and columns with the following variables describing the category:\cr categories.category*.categoryId,\cr categories.category*.name.
+##' @param stateId (optional) a character string or list of character strings with the state ID(s) (default: "NA", for national) (see references for details)
+##' @return A data frame with a row for each category and columns with the following variables describing the category:\cr categories.category*.categoryId,\cr categories.category*.name.
 ##' @references http://api.votesmart.org/docs/Votes.html\cr
 ##' Use State.getStateIDs() to get a list of state IDs.
 ##' @author Ulrich Matter <ulrich.matter-at-unibas.ch>

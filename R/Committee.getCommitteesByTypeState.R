@@ -3,9 +3,9 @@
 ##' This function is a wrapper for the Committee.getCommitteesByTypeState() method of the PVS API Committee class which returns a list of committees for each type in each requested state. The function sends a request with this method to the PVS API for all type and state IDs given as a function input, extracts the XML values from the returned XML file(s) and returns them arranged in one data frame.
 ##' @usage Committee.getCommitteesByTypeState(typeId=list("H","S","J"), stateId="NA", all=FALSE)
 ##' @param typeId (optional) a character string or list of character strings with the type ID(s) (default: All) (see references for details)
-##' @param stateId (optional) a character string or list of character strings with the state ID(s) (default: NA) (see references for details)
+##' @param stateId (optional) a character string or list of character strings with the state ID(s) (default: "NA", for national) (see references for details)
 ##' @param all a logical indicator; if TRUE data on all possible combinations of the input variables are returned, if FALSE (default) only the exact combinations of them (see example)
-##' @return A data frame with a row for each committee and columns with variables describing the committee. The returned data frame contains a row for each committee and columns with the following variables describing the committee:\cr committees.committee*.committeeId,\cr committees.committee*.parentId,\cr committees.committee*.stateId,\cr committees.committee*.committeeTypeId,\cr committees.committee*.name.
+##' @return A data frame with a row for each committee and columns with the following variables describing the committee:\cr committees.committee*.committeeId,\cr committees.committee*.parentId,\cr committees.committee*.stateId,\cr committees.committee*.committeeTypeId,\cr committees.committee*.name.
 ##' @references http://api.votesmart.org/docs/Committee.html|cr
 ##' See http://api.votesmart.org/docs/semi-static.html for a list of committee-type ID(s).\cr
 ##' Use State.getStateIDs() to get a list of state IDs.

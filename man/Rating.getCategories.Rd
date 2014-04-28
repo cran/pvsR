@@ -2,29 +2,27 @@
 \alias{Rating.getCategories}
 \title{Get categories that contain released ratings according to state}
 \usage{
-  Rating.getCategories(stateId="NA")
+Rating.getCategories(stateId="NA")
 }
 \arguments{
   \item{stateId}{(optional) a character string or list of
-  character strings with the stateId(s) (default: NA) (see
-  references for details)}
+  character strings with the stateId(s) (default: "NA", for
+  national) (see references for details)}
 }
 \value{
-  A data frame with a row for each rating and columns with
-  variables describing the rating. The returned data frame
-  contains a row for each rating and columns with the
-  following variables describing the rating:\cr
-  categories.category*.categoryId,\cr
-  categories.category*.name.
+A data frame with a row for each rating and columns with
+the following variables describing the rating:\cr
+categories.category*.categoryId,\cr
+categories.category*.name.
 }
 \description{
-  This function is a wrapper for the Rating.getCategories()
-  method of the PVS API Rating class which dumps categories
-  that contain released ratings according to state. The
-  function sends a request with this method to the PVS API
-  for all state IDs given as a function input, extracts the
-  XML values from the returned XML file(s) and returns them
-  arranged in one data frame.
+This function is a wrapper for the Rating.getCategories()
+method of the PVS API Rating class which dumps categories
+that contain released ratings according to state. The
+function sends a request with this method to the PVS API
+for all state IDs given as a function input, extracts the
+XML values from the returned XML file(s) and returns them
+arranged in one data frame.
 }
 \examples{
 # First, make sure your personal PVS API key is saved as character string in the pvs.key variable:
@@ -34,10 +32,10 @@
 \dontrun{rating}
 }
 \author{
-  Ulrich Matter <ulrich.matter-at-unibas.ch>
+Ulrich Matter <ulrich.matter-at-unibas.ch>
 }
 \references{
-  http://api.votesmart.org/docs/Rating.html\cr Use
-  State.getStateIDs() to get a list of state IDs.
+http://api.votesmart.org/docs/Rating.html\cr Use
+State.getStateIDs() to get a list of state IDs.
 }
 

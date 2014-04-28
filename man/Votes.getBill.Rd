@@ -2,7 +2,7 @@
 \alias{Votes.getBill}
 \title{Get general information on a bill}
 \usage{
-  Votes.getBill(billId,...)
+Votes.getBill(billId,...)
 }
 \arguments{
   \item{billId}{a character string or list of character
@@ -15,43 +15,43 @@
   (e.g., "sponsors").}
 }
 \value{
-  If separate is not specified, a data frame with a row for
-  each bill and columns with variables describing the bill.
-  If separate is specified, a list containing several data
-  frames, one for each subnode mentioned in separate and
-  additionally one data frame containing all remaining
-  nodes not mentioned in separate. The returned data frame
-  contains a row for each bill and columns with the
-  following variables describing the bill:\cr
-  bill.billnumber,\cr bill.parentbill,\cr bill.title,\cr
-  bill.officialtitle,\cr bill.dateintroduced,\cr
-  bill.type,\cr bill.categories.category*.categoryId,\cr
-  bill.categories.category*.name,\cr bill.billtextLink,\cr
-  bill.sponsors.sponsor*.candidateId,\cr
-  bill.sponsors.sponsor*.name,\cr
-  bill.sponsors.sponsor*.type,\cr
-  bill.committeeSponsors.committeeSponsor*.committeeId,\cr
-  bill.committeeSponsors.committeeSponsor*.name,\cr
-  bill.actions.action*.actionId,\cr
-  bill.actions.action*.level,\cr
-  bill.actions.action*.stage,\cr
-  bill.actions.action*.outcome,\cr
-  bill.actions.action*.statusDate,\cr
-  bill.actions.action*.rollNumber,\cr
-  bill.actions.action*.yea,\cr bill.actions.action*.nay,\cr
-  bill.actions.action*.voiceVote,\cr
-  bill.amendments.amendment*.billNumber,\cr
-  bill.amendments.amendment*.actionId,\cr
-  bill.amendments.amendment*.title,\cr
-  bill.amendments.amendment*.statusDate.
+If separate is not specified, a data frame with a row for
+each bill and columns with variables describing the bill.
+If separate is specified, a list containing several data
+frames, one for each subnode mentioned in separate and
+additionally one data frame containing all remaining nodes
+not mentioned in separate. The returned data frame contains
+a row for each bill and columns with the following
+variables describing the bill:\cr bill.billnumber,\cr
+bill.parentbill,\cr bill.title,\cr bill.officialtitle,\cr
+bill.dateintroduced,\cr bill.type,\cr
+bill.categories.category*.categoryId,\cr
+bill.categories.category*.name,\cr bill.billtextLink,\cr
+bill.sponsors.sponsor*.candidateId,\cr
+bill.sponsors.sponsor*.name,\cr
+bill.sponsors.sponsor*.type,\cr
+bill.committeeSponsors.committeeSponsor*.committeeId,\cr
+bill.committeeSponsors.committeeSponsor*.name,\cr
+bill.actions.action*.actionId,\cr
+bill.actions.action*.level,\cr
+bill.actions.action*.stage,\cr
+bill.actions.action*.outcome,\cr
+bill.actions.action*.statusDate,\cr
+bill.actions.action*.rollNumber,\cr
+bill.actions.action*.yea,\cr bill.actions.action*.nay,\cr
+bill.actions.action*.voiceVote,\cr
+bill.amendments.amendment*.billNumber,\cr
+bill.amendments.amendment*.actionId,\cr
+bill.amendments.amendment*.title,\cr
+bill.amendments.amendment*.statusDate.
 }
 \description{
-  This function is a wrapper for the Votes.getBill() method
-  of the PVS API Votes class which grabs the general
-  information on a bill. The function sends a request with
-  this method to the PVS API for all bill IDs given as a
-  function input, extracts the XML values from the returned
-  XML file(s) and returns them arranged in one data frame.
+This function is a wrapper for the Votes.getBill() method
+of the PVS API Votes class which grabs the general
+information on a bill. The function sends a request with
+this method to the PVS API for all bill IDs given as a
+function input, extracts the XML values from the returned
+XML file(s) and returns them arranged in one data frame.
 }
 \examples{
 # First, make sure your personal PVS API key is saved as character string in the pvs.key variable:
@@ -69,17 +69,17 @@ separate=c("sponsors","actions"))}
 \dontrun{billinfo2$main}
 }
 \author{
-  Ulrich Matter <ulrich.matter-at-unibas.ch>
+Ulrich Matter <ulrich.matter-at-unibas.ch>
 }
 \references{
-  http://api.votesmart.org/docs/Votes.html\cr Use
-  Votes.getByBillNumber(),
-  Votes.getBillsByCategoryYearState(),
-  Votes.getBillsByYearState(),
-  Votes.getBillsByOfficialYearOffice(),
-  Votes.getBillsByOfficialCategoryOffice(),
-  Votes.getByOfficial(), Votes.getBillsBySponsorYear(),
-  Votes.getBillsBySponsorCategory() or
-  Votes.getBillsByStateRecent() to get a list of bill IDs.
+http://api.votesmart.org/docs/Votes.html\cr Use
+Votes.getByBillNumber(),
+Votes.getBillsByCategoryYearState(),
+Votes.getBillsByYearState(),
+Votes.getBillsByOfficialYearOffice(),
+Votes.getBillsByOfficialCategoryOffice(),
+Votes.getByOfficial(), Votes.getBillsBySponsorYear(),
+Votes.getBillsBySponsorCategory() or
+Votes.getBillsByStateRecent() to get a list of bill IDs.
 }
 
