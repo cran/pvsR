@@ -32,4 +32,18 @@ pvsR 0.2
 * Fixed several little bugs
 
 
+pvsR 0.3
+-----------------------------------
+
+* Added a function (wrapper) for the new CandidateBio.getDetailedBio() method of the PVS API CandidateBio class
+
+* Added a high level function that facilitates the download of data based on many API queries: 
+  getAllVotes
+
+* Improved internal function dfList() with respect to handling empty xml-nodes
+  
+* Fixed several little bugs
+
+
+
 

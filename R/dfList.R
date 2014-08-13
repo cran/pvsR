@@ -13,12 +13,28 @@
 
 dfList <- function(l) {
   
+  # coerce df columns to character, clean data
+  l <- lapply(l, FUN = function(i){
+    
+    for (j in names(i)) {
+      
+      i[,j] <- as.character(i[,j])
+      i[!is.na(i[,j]) & i[,j]=="list()",j] <- NA # test this
+      i[,j] <- as.character(i[,j])
+      
+      
+    }
+    
+    i
+    
+  })
   
   if (length(l)==1) {
     
     l2 <- l
     
   } else {
+    
   
   # first: extract all variable names that come up in the data frames of the list 
   
@@ -65,8 +81,9 @@ dfList <- function(l) {
   }
   
   # now the list is ready to be rbind to one dataframe 
-  
   l.df <- do.call("rbind", l2)
+  
+  # clean the df
   
   l.df
   

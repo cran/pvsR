@@ -112,7 +112,7 @@ pvsRequest10 <-
   
   # extract values for each remaining mainnode
   
-  seplist <- lapply(1:length(separate), function(s) {
+  seplist <- lapply(separate, function(s) {
   
   data.frame(t(xmlSApply(output[[s]], function(x) xmlSApply(x, xmlValue))),row.names=NULL)
   
